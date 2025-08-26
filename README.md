@@ -14,7 +14,7 @@ Her proje, kurulum adımlarını ve gerekli dosyaları içeren kendi klasöründ
   - WiFi üzerinden HomeKit entegrasyonu (yalnızca 2.4GHz ağlarda).  
   - iOS cihazlarda **Home** uygulaması ile LED kontrolü.  
   - D19 pinine bağlı LED’i açıp kapatma.  
-- [Daha fazla bilgi için proje klasörüne gidin](HomeKit).  
+- [Daha fazla bilgi için proje klasörüne gidin](Homekit).  
 
 ---
 
