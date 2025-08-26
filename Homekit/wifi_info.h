@@ -3,8 +3,8 @@
 
 #include <WiFi.h>
 
-const char *ssid = "SARIARSLAN_2.4GHz";
-const char *password = "24AbEs24";
+const char *ssid = "WİFİ-NAME";
+const char *password = "PASSWORD";
 
 void wifi_connect() {
     WiFi.persistent(false);
@@ -21,3 +21,4 @@ void wifi_connect() {
 }
 
 #endif /* WIFI_INFO_H_ */
+
