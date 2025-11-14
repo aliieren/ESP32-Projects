@@ -3,8 +3,8 @@
 
 #include <WiFi.h>
 
-const char *ssid = "Isonixc";
-const char *password = "eren2424";
+const char *ssid = "WİFİ-NAME";
+const char *password = "PASSWORD";
 
 void wifi_connect() {
     WiFi.persistent(false);
@@ -21,3 +21,4 @@ void wifi_connect() {
 }
 
 #endif 
+
