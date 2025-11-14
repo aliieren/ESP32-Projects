@@ -1,6 +1,6 @@
-# ESP32 HomeKit LED Kontrol Projesi
+# ESP32 HomeKit Module LED Kontrol Projesi
 
-Bu proje, **ESP32 mikrodenetleyici kartını** kullanarak Apple HomeKit üzerinden bir LED'i kontrol etmeyi sağlar. Proje, ESP32'nin WiFi özelliklerini kullanarak yerel ağınıza bağlanır ve HomeKit uygulaması üzerinden birden fazla LED'i açıp kapatmanıza olanak tanır.  
+Bu proje, **ESP32 mikrodenetleyici kartını** kullanarak Apple HomeKit üzerinden birden fazla LED'i kontrol etmeyi sağlar. Proje, ESP32'nin WiFi özelliklerini kullanarak yerel ağınıza bağlanır ve HomeKit uygulaması üzerinden birden fazla LED'i açıp kapatmanıza olanak tanır.  
 
 ## Proje Açıklaması
 
