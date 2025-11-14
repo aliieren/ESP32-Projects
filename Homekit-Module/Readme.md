@@ -1,47 +1,57 @@
 # ESP32 HomeKit LED Kontrol Projesi
 
-Bu proje, **ESP32 mikrodenetleyici kartı** kullanarak Apple HomeKit üzerinden LED kontrolü yapmayı sağlar. Proje, ESP32’nin WiFi özelliklerini kullanarak yerel ağınıza bağlanır ve iOS cihazlarda Home uygulaması üzerinden LED'i açıp kapatmanıza olanak tanır.
-
-> ⚠️ Not: ESP32 yalnızca **2.4GHz WiFi ağları** ile çalışır.
-
----
+Bu proje, **ESP32 mikrodenetleyici kartını** kullanarak Apple HomeKit üzerinden bir LED'i kontrol etmeyi sağlar. Proje, ESP32'nin WiFi özelliklerini kullanarak yerel ağınıza bağlanır ve HomeKit uygulaması üzerinden birden fazla LED'i açıp kapatmanıza olanak tanır.  
 
 ## Proje Açıklaması
 
-ESP32 kartına bağlı bir LED, Apple HomeKit uygulaması üzerinden kontrol edilebilir. Cihazı HomeKit uygulamasına ekleyip belirlediğiniz şifre ile eşleştirdikten sonra LED'i açıp kapatabilirsiniz.
+Proje, ESP32 kartına bağlı birden fazla LED'in Apple HomeKit uygulaması üzerinden kontrol edilmesini sağlar. HomeKit uygulamasına cihaz ekleyerek, belirlediğiniz şifre ile cihazı eşleştirebilir ve LED'leri açıp kapatabilirsiniz. Sadece LED değil istediğiniz cihazlarıda ESP32 kartına takarak kontrol edebilirsiniz.  
 
-**Kontrol Edilen Pinler:**
-- D16
-- D17
-- D18
-
-İsteğe bağlı olarak daha fazla cihaz ve LED ekleyebilirsiniz.
-
----
-
-## Gereksinimler
-
-- ESP32 mikrodenetleyici kartı  
-- Arduino IDE veya ESP-IDF (ESP32 desteği ile)  
-- Apple HomeKit uygulaması (iOS cihazlarda)  
-- LED ve direnç (ESP32’nin GPIO pinlerinden birine bağlanacak)  
-
----
+⚠️ **Not:** ESP32 yalnızca **2.4GHz WiFi ağları** ile çalışır.  
 
 ## Kurulum
 
-### 1. Geliştirme Ortamını Hazırlama
+### Gereksinimler
 
-1. Arduino IDE kullanıyorsanız ESP32 desteğini kurun.  
-2. Gerekli kütüphaneleri yükleyin:  
-   - [HomeSpan](https://github.com/HomeSpan/HomeSpan)  
-   - ESP32 Espressif Systems kütüphaneleri  
-3. ESP32 kartınızı seçin ve doğru portu ayarlayın.  
+- **ESP32** mikrodenetleyici kartı  
+- **Arduino IDE** veya **ESP-IDF** (ESP32 desteği ile kurulu)  
+- **Apple HomeKit** uygulaması (iOS cihazlarda)  
+- **LED** ve direnç (ESP32’nin GPIO pinlerinden birine bağlanacak)  
 
-### 2. WiFi Bilgilerini Güncelleme
+### Adım Adım Kurulum
 
-`wifi_info.h` dosyasını açın ve kendi ağ bilgilerinizi girin:
+1. **Geliştirme Ortamını Hazırlama**  
+   - Arduino IDE kullanıyorsanız ESP32 desteğini kurun.  
+   - Gerekli kütüphaneleri yükleyin (`HomeSpan , esp32 Espressif Systems` vb.).  
+   - ESP32 kartınızı seçin ve doğru portu ayarlayın (`Genellikle ESP32 DEV MODULE seçilir.`). 
 
-```cpp
-const char *ssid = "Wifi-Name";
-const char *password = "Password";
+2. **WiFi Bilgilerini Güncelleme**  
+   - `wifi_info.h` dosyasını açın ve kendi ağ bilgilerinizi girin:  
+     ```cpp
+     const char *ssid = "Wifi-Name";
+     const char *password = "Password";
+     ```  
+   - `Wifi-Name` ve `Password` yerine kendi WiFi SSID ve şifrenizi yazın.  
+
+3. **Kodu Yükleme**  
+   - `Homekit-Module.ino` dosyasını açın.  
+   - Kodu ESP32 kartınıza yükleyin.  
+
+4. **HomeKit ile Eşleştirme**  
+   - iPhone cihazınızda **Home** uygulamasını açın.  
+   - "Cihaz Ekle" seçeneğini seçin ve ESP32 kartını bulun.  
+   - Şifre olarak `111-22-333` girin ve cihazı eşleştirin.  
+
+5. **LED Kontrolü**  
+   - D19 pinine bağladığınız LED’i HomeKit uygulamasındaki buton ile açıp kapatabilirsiniz.
+
+## Dosyalar
+
+- **Homekit-Module.ino / app_main.c**: ESP32’nin HomeKit ile iletişimini sağlayan ana dosya.  
+- **wifi_info.h**: WiFi ağ bilgilerinin bulunduğu dosya (kendi SSID ve şifrenizi buraya ekleyin).    
+
+## Önemli Notlar
+
+- **WiFi Ağı**: ESP32 yalnızca **2.4GHz WiFi ağları** ile çalışır.  
+- **HomeKit Şifresi**: Eşleştirme şifresi varsayılan olarak `111-22-333` şeklindedir.  
+- Değiştirmek için `Homekit-Module.ino` dosyasındaki `homeSpan.setPairingCode("11122333") ve homeSpan.setQRID("111-22-333")` yapısını düzenleyebilirsiniz.  
+ 
