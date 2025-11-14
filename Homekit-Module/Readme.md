@@ -42,7 +42,7 @@ Proje, ESP32 kartına bağlı birden fazla LED'in Apple HomeKit uygulaması üze
    - Şifre olarak `111-22-333` girin ve cihazı eşleştirin.  
 
 5. **LED Kontrolü**  
-   - D19 pinine bağladığınız LED’i HomeKit uygulamasındaki buton ile açıp kapatabilirsiniz.
+   - D16, D17 ve D18 pinlerine bağladığınız LED’leri HomeKit uygulamasındaki buton ile açıp kapatabilirsiniz.
 
 ## Dosyalar
 
