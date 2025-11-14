@@ -20,5 +20,6 @@ void wifi_connect() {
     Serial.printf("WiFi connected, IP: %s\n", WiFi.localIP().toString().c_str());
 }
 
+#endif 
 
 
